@@ -5,8 +5,8 @@ RUN yum install -y wget java-1.8.0-openjdk-devel \
     && yum groupinstall -y "Development Tools" \
     && yum clean all \
     && wget -q https://github.com/griddb/griddb_nosql/releases/download/v4.2.1/griddb_nosql-4.2.1-1.linux.x86_64.rpm \
-    && rpm -ivh 4.2.1-1.linux.x86_64.rpm \
-    && rm 4.2.1-1.linux.x86_64.rpm
+    && rpm -ivh griddb_nosql-4.2.1-1.linux.x86_64.rpm \
+    && rm griddb_nosql-4.2.1-1.linux.x86_64.rpm
 
 ENV GS_HOME /var/lib/gridstore
 ENV GS_LOG $GS_HOME/log
