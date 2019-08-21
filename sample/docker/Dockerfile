@@ -10,7 +10,7 @@ RUN yum install -y wget java-1.8.0-openjdk-devel \
 
 ENV HOME /var/lib/gridstore
 
-RUN su - gsadm "gs_passwd admin -p admin" \
+RUN su - gsadm -c "gs_passwd admin -p admin" \
     && sed -i -e s/\"clusterName\":\"\"/\"clusterName\":\"dockerGridDB\"/g \
        /var/lib/gridstore/conf/gs_cluster.json
 
